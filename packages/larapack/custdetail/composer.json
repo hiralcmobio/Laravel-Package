@@ -1,0 +1,22 @@
+{
+    "name": "larapack/custdetail",
+    "description": "This package will show customer status of to process ahead",
+    "authors": [
+        {
+            "name": "hiralchudasama",
+            "email": "hiral.chudasama@mobiosolutions.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Larapack\\Custdetail\\CustDetailServiceProvider"
+            ]
+        }
+    }
+}
+
+
