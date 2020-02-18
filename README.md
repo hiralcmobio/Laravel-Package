@@ -114,7 +114,7 @@ and make customers table by below command:
 
 `php artisan migrate`
 
-Now, we will make blade file in `/packages/larapack/custdetail/src/views` like below:
+Now, we will make blade file in `/packages/larapack/custdetail/src/views/addCustomer.blade.php` like below:
 
     @extends('layouts.app')
     
