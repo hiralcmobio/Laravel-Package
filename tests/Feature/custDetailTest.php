@@ -14,7 +14,7 @@ class custDetailTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testRoute()
     {
         $response = $this->get('/');
 
