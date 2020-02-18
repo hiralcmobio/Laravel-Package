@@ -84,7 +84,23 @@ Here we need to add below code into our package’s composer.json:
         
 Now, we will create controller file by below command:
 
-`php artisan make:controller CustDetailController`      
+`php artisan make:controller CustDetailController`    
+
+We will make routes folder to give route to our controller function in `/packages/larapack/custdetail/src/routes`.
+
+in that we will make `web.php` file.
+
+`/packages/larapack/custdetail/src/routes/web.php`.
+
+We will register controller to our service provider like below,
+
+    public function register()
+    {
+            include __DIR__.'/routes/web.php';
+            $this->app->make('Larapack\Custdetail\CustdetailController');
+    }
+    
+
 
 Now, we will add authentication in our code by below commands:
 
@@ -194,6 +210,11 @@ We will make one function in `CustDetailController.php` file. Like below,
         Session::flash('alert-class', 'alert-success');
         return redirect('home');
     }
+    
+and add routes to `/packages/larapack/custdetail/src/routes/web.php` file.
+
+    Route::post('/postCustomer',
+    'larapack\custdetail\CustdetailController@postCustomer');
     
 Now, our package is ready to use. So, we will run below command in terminal:
 
