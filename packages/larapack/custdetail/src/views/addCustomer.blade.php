@@ -5,11 +5,8 @@
     <div class="container">
         <div class="row justify-content-center">
             @if(Session::has('message'))
-                {{Session::get("message")}}
+                <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('message') }}</p>
             @endif
-{{--            @if(Session::has('message'))--}}
-{{--                <p class="alert {{ Session::get('alert-class', 'alert-danger') }}">{{ Session::get('message') }}</p>--}}
-{{--            @endif--}}
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Dashboard</div>
