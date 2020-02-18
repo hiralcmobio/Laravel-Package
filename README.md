@@ -114,7 +114,7 @@ and make customers table by below command:
 
 `php artisan migrate`
 
-Now, we will make blade file like below:
+Now, we will make blade file in `/packages/larapack/custdetail/src/views` like below:
 
     @extends('layouts.app')
     
@@ -173,12 +173,22 @@ Now, we will make blade file like below:
         </div>
     @endsection
     
+And will register in service provider boot method.
+
+    public function boot()
+    {
+        $this->loadViewsFrom(__DIR__.'/views', 'custdetail');
+        $this->publishes([
+            __DIR__.'/views' => base_path('resources/views/larapack/custdetail/'),
+        ]);
+    }
+    
 Now, we will update index function of Home controller in that, we will update view page. We will show `addCustomer.blade.php` file instead of `home.blade.php` file.
 
  
     public function index()
     {
-        return view('customers.addCustomer');
+        return view('custdetail::addCustomer');
     }
     
 By this, we will redirect to `addCustomer` page.
@@ -218,7 +228,7 @@ and add routes to `/packages/larapack/custdetail/src/routes/web.php` file.
     
 Now, our package is ready to use. So, we will run below command in terminal:
 
-`php artisan server`
+`php artisan serve`
 
 And run URL to browser.
     
